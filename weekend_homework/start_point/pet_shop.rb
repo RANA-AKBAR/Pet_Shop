@@ -85,3 +85,41 @@ def customer_pet_count(customer)
   count = customer[:pets].length
   return count
 end
+
+
+
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets].push(new_pet)
+end
+
+
+# def customer_can_afford_pet(customer, pet)
+#   if customer[:cash] <= pet[:price]
+#     return true
+#   else
+#     return false
+#   end
+# end
+
+
+
+def customer_can_afford_pet(customer, pet)
+  can_afford  = (pet[:price] <= customer[:cash])
+  return can_afford
+end
+
+
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+
+  sale_price = 0
+
+   for sold_pet in pet_shop[:pets]
+      if sold_pet[:name] == pet
+        sale_price = sold_pet[:price]
+      end
+      return sale_price
+    end
+return 1
+
+end
